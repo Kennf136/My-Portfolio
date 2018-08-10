@@ -7,27 +7,27 @@ class api extends Component {
 
     state = {
   
-data:[
-      {  easyA: [{}],
+
+        easyA: [{}],
         mediumA: [{}],
-        hardA: [{}]
-    },
-        {easyB: [{}],
+        hardA: [{}],
+        easyB: [{}],
         mediumB: [{}],
-        hardB: [{}]},
-       { easyC: [{}],
+        hardB: [{}],
+        easyC: [{}],
         mediumC: [{}],
-        hardC: [{}]},
-        {easyD: [{}],
+        hardC: [{}],
+        easyD: [{}],
         mediumD: [{}],
-        hardD: [{}]},
-        {easyE: [{}],
+        hardD: [{}],
+        easyE: [{}],
         mediumE: [{}],
-        hardE: [{}]},
-        {easyF: [{}],
+        hardE: [{}],
+        easyF: [{}],
         mediumF: [{}],
-        hardF: [{}]},
-]
+        hardF: [{}],
+        
+
     }
         ;
     componentDidMount() {
@@ -84,193 +84,230 @@ data:[
 
     render() {
 
-        const Amep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        const catagories =[
+            {  easyA: [{}],
+            mediumA: [{}],
+            hardA: [{}] },
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+            { easyB: [{}],
+            mediumB: [{}],
+            hardB: [{}] },
 
-            )
-        })
-        const Abeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+            { easyC: [{}],
+            mediumC: [{}],
+            hardC: [{}] },
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+            {  easyD: [{}],
+            mediumD: [{}],
+            hardD: [{}]},
 
-            )
-        })
-        const Aceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+            { easyE: [{}],
+            mediumE: [{}],
+            hardE: [{}]},
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+            { easyF: [{}],
+            mediumF: [{}],
+            hardF: [{}]}
 
-            )
-        })
-        const Bmep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        ]
+        console.log(catagories)
+// const feep= catagories.map((who, ) => {
+//     return (
+//         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+//             <div> {who.easyA}  </div>
+//             <div>{who.correct_answer}{who.incorrect_answers} </div>
+//         </div>
 
-            )
-        })
-        const Bbeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+//     )
+// })
+        // const Amep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
 
-            )
-        })
-        const Bceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Abeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Cmep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Aceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Cbeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Bmep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
 
-            )
-        })
-        const Cceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Bbeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Dmep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Bceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Dbeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Cmep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
 
-            )
-        })
-        const Dceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Cbeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Emep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Cceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Ebeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Dmep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
 
-            )
-        })
-        const Eceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Dbeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Fmep = this.state.easyA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Dceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
-        const Fbeep = this.state.mediumA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Emep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
 
-            )
-        })
-        const Fceeep = this.state.hardA.map((who, ) => {
-            return (
-                <div>
+        //     )
+        // })
+        // const Ebeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
 
-                    <div> {who.question}  </div>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                </div>
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
 
-            )
-        })
+        //     )
+        // })
+        // const Eceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
+
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
+
+        //     )
+        // })
+        // const Fmep = this.state.easyA.map((who, ) => {
+        //     return (
+        //         <div>
+
+        //             <div> {who.question}  </div>
+        //             <div>{who.correct_answer}{who.incorrect_answers} </div>
+        //         </div>
+
+        //     )
+        // })
+        // const Fbeep = this.state.mediumA.map((who, ) => {
+        //     return (
+        //         <div>
+
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
+
+        //     )
+        // })
+        // const Fceeep = this.state.hardA.map((who, ) => {
+        //     return (
+        //         <div>
+
+        //             <div> {who.question}  </div>
+        //             <div>{who.incorrect_answers}{who.correct_answer} </div>
+        //         </div>
+
+        //     )
+        // })
         
 
         return (
             <div>
 
                 <div>
-                    {Amep} {Abeep}{Aceeep}
+                    {/* {Amep} {Abeep}{Aceeep}
                 </div>
                 <div>
                     {Bmep} {Bbeep}{Bceeep}
@@ -285,7 +322,8 @@ data:[
                     {Emep} {Ebeep}{Eceeep}
                 </div>
                 <div>
-                    {Fmep} {Fbeep}{Fceeep}
+                    {Fmep} {Fbeep}{Fceeep} */}
+                    {/* {feep} */}
                 </div>
             </div>
 
