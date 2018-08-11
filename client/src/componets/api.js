@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import QAE from './QAE';
 
 class Api extends Component {
 
@@ -172,16 +173,8 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                    {show ?
-                        <div onClick={() => { show = false }} > $ {(i + 5) * 200} </div>
-                        :
-                        <div onClick={() => { show = true }}>
-                            <h3> {who.question}  </h3>
-                            <div>{who.incorrect_answers}{who.correct_answer} </div>
-                        </div>
-                    }
-
-
+                  
+                    <QAE/>
 
                 </div>
 
@@ -209,7 +202,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        <div onClick={show= false }> $ {(i + 3) * 200} </div>
                         :
                         <div onClick={() => { show = true }}>
                             <h3> {who.question}  </h3>
@@ -226,7 +219,7 @@ class Api extends Component {
             return (
                 <div>
                     {
-                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                        show ? <div onClick={() =>({ show: false })}> $ {(i + 5) * 200} </div>
                             :
                             <div onClick={() => { show = true }}>
                                 <h3> {who.question}  </h3>
