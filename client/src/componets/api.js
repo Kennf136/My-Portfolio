@@ -26,7 +26,7 @@ class Api extends Component {
         easyF: [{}],
         mediumF: [{}],
         hardF: [{}],
-       show:false
+        show:false
 
     }
         ;
@@ -133,12 +133,20 @@ class Api extends Component {
         })
 
         const Amep = this.state.easyB.map((who,i ) => {
-            return (
+            let show=true
+            return ( 
                 <div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
+                    
+                    {    show ? <div > $ {(i+1)*200} </div> 
+                   
+                    : 
+
+                    <div onClick={()=>{ show=false}}>
+                      <h3> {who.question}  </h3> 
+                    <div>{who.correct_answer}{who.incorrect_answers}  </div>
+                    </div>
+                    }
                 </div>
 
             )
