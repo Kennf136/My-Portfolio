@@ -12,8 +12,32 @@ class GameBorad extends Component {
     
     render() {
        
+const cata= this.props.Agroup.map((cat)=>{
+
+} )
+
+
         return (
             <div>
+                 <div>
+                    {/* {Amep} {Abeep}{Aceeep}
+                </div>
+                <div>
+                    {Bmep} {Bbeep}{Bceeep}
+                </div>
+                <div>
+                    {Cmep} {Cbeep}{Cceeep}
+                </div>
+                <div>
+                    {Dmep} {Dbeep}{Dceeep}
+                </div>
+                <div>
+                    {Emep} {Ebeep}{Eceeep}
+                </div>
+                <div>
+                    {Fmep} {Fbeep}{Fceeep} */}
+                </div>
+            
             </div>
         );
     }

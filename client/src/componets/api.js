@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import GameBorad from './GameBorad';
 
 class api extends Component {
 
@@ -265,29 +266,16 @@ data:[
             )
         })
         
-
+const Agroup = [ Amep,Abeep,Aceeep]
+const Bgroup = [ Bmep,Bbeep,Bceeep]
+const Cgroup = [ Cmep,Cbeep,Cceeep]
+const Dgroup = [ Dmep,Dbeep,Dceeep]
+const Egroup = [ Emep,Ebeep,Eceeep]
+const Fgroup = [ Fmep,Fbeep,Fceeep]
         return (
             <div>
-
-                <div>
-                    {Amep} {Abeep}{Aceeep}
-                </div>
-                <div>
-                    {Bmep} {Bbeep}{Bceeep}
-                </div>
-                <div>
-                    {Cmep} {Cbeep}{Cceeep}
-                </div>
-                <div>
-                    {Dmep} {Dbeep}{Dceeep}
-                </div>
-                <div>
-                    {Emep} {Ebeep}{Eceeep}
-                </div>
-                <div>
-                    {Fmep} {Fbeep}{Fceeep}
-                </div>
-            </div>
+<GameBorad a={Agroup} b={Bgroup} c={Cgroup} d={Dgroup} e={Egroup} f={Fgroup} />
+               </div>
 
         );
     }
