@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import QAE from './QAE';
+import QAH from './QAH';
+import QBH from './QBH';
+import QCH from './QCH';
+import QDH from './QDH';
+import QEH from './QEH';
+import QFH from './QFH';
 
 class Api extends Component {
 
@@ -133,7 +138,7 @@ class Api extends Component {
             )
         })
 
-        const Amep = this.state.easyB.map((who, i) => {
+        const Amep = this.state.easyA.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -152,7 +157,7 @@ class Api extends Component {
 
             )
         })
-        const Abeep = this.state.mediumB.map((who, i) => {
+        const Abeep = this.state.mediumA.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -169,18 +174,18 @@ class Api extends Component {
 
             )
         })
-        const Aceeep = this.state.hardB.map((who, i) => {
+        const Aceeep = this.state.hardA.map((who, i) => {
             let show = true
             return (
                 <div>
                   
-                    <QAE/>
+                    <QAH QAH={who.question} AAH={who.correct_answer} IAH={who.incorrect_answers} value={i}></QAH>
 
                 </div>
 
             )
         })
-        const Bmep = this.state.easyC.map((who, i) => {
+        const Bmep = this.state.easyB.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -197,7 +202,7 @@ class Api extends Component {
 
             )
         })
-        const Bbeep = this.state.mediumC.map((who, i) => {
+        const Bbeep = this.state.mediumB.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -214,26 +219,16 @@ class Api extends Component {
 
             )
         })
-        const Bceeep = this.state.hardC.map((who, i) => {
+        const Bceeep = this.state.hardB.map((who, i) => {
             let show = true
             return (
                 <div>
-                    {
-                        show ? <div onClick={() =>({ show: false })}> $ {(i + 5) * 200} </div>
-                            :
-                            <div onClick={() => { show = true }}>
-                                <h3> {who.question}  </h3>
-                                <div>{who.incorrect_answers}{who.correct_answer} </div>
-                            </div>
-
-                    }
-
-
+                    <QBH QAH={who.question} ABH={who.correct_answer} IBH={who.incorrect_answers} value={i}></QBH>
                 </div>
 
             )
         })
-        const Cmep = this.state.easyD.map((who, i) => {
+        const Cmep = this.state.easyC.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -251,7 +246,7 @@ class Api extends Component {
 
             )
         })
-        const Cbeep = this.state.mediumD.map((who, i) => {
+        const Cbeep = this.state.mediumC.map((who, i) => {
            let show= true
             return (
                 <div>
@@ -268,27 +263,19 @@ class Api extends Component {
 
             )
         })
-        const Cceeep = this.state.hardD.map((who, i) => {
+        const Cceeep = this.state.hardC.map((who, i) => {
 
             let show = true
             return (
                 <div>
-                    {
-                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
-                            :
-                            <div onClick={() => this.setState({ show: true })}>
-                                <h3> {who.question}  </h3>
-                                <div>{who.incorrect_answers}{who.correct_answer} </div>
-                            </div>
-
-                    }
+                   <QCH QCH={who.question} ACH={who.correct_answer} ICH={who.incorrect_answers} value={i}></QCH>
 
 
                 </div>
 
             )
         })
-        const Dmep = this.state.easyE.map((who, i) => {
+        const Dmep = this.state.easyD.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -305,7 +292,7 @@ class Api extends Component {
 
             )
         })
-        const Dbeep = this.state.mediumE.map((who, i) => {
+        const Dbeep = this.state.mediumD.map((who, i) => {
             let show = true
             return (
                 <div>
@@ -321,19 +308,11 @@ class Api extends Component {
                 </div>
             )
         })
-        const Dceeep = this.state.hardE.map((who, i) => {
+        const Dceeep = this.state.hardD.map((who, i) => {
             let show = true
             return (
                 <div>
-                    {
-                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
-                            :
-                            <div onClick={() => this.setState({ show: true })}>
-                                <h3> {who.question}  </h3>
-                                <div>{who.incorrect_answers}{who.correct_answer} </div>
-                            </div>
-
-                    }
+                   <QDH QDH={who.question} ADH={who.correct_answer} IDH={who.incorrect_answers} value={i}></QDH>
 
 
                 </div>
@@ -377,16 +356,7 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                    {
-                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
-                            :
-                            <div onClick={() => this.setState({ show: true })}>
-                                <h3> {who.question}  </h3>
-                                <div>{who.incorrect_answers}{who.correct_answer} </div>
-                            </div>
-
-                    }
-
+                    <QEH QAH={who.question} AEH={who.correct_answer} IEH={who.incorrect_answers} value={i}></QEH>
 
                 </div>
 
@@ -431,15 +401,7 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                    {
-                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
-                            :
-                            <div onClick={() => this.setState({ show: true })}>
-                                <h3> {who.question}  </h3>
-                                <div>{who.incorrect_answers}{who.correct_answer} </div>
-                            </div>
-
-                    }
+                    <QFH QAH={who.question} AFH={who.correct_answer} IFH={who.incorrect_answers} value={i}></QFH>
 
 
                 </div>
