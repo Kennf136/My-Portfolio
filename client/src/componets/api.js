@@ -26,7 +26,7 @@ class Api extends Component {
         easyF: [{}],
         mediumF: [{}],
         hardF: [{}],
-        show:false
+     
 
     }
         ;
@@ -59,7 +59,7 @@ class Api extends Component {
             const easyQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=12&difficulty=easy&type=multiple`)
             const mediumQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=12&difficulty=medium&type=multiple`)
             const HardQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=12&difficulty=hard&type=multiple`)
-          
+
             this.setState({
                 // category:[{
                 easyA: easyQuestionAReponse.data.results,
@@ -132,209 +132,325 @@ class Api extends Component {
             )
         })
 
-        const Amep = this.state.easyB.map((who,i ) => {
-            let show=true
-            return ( 
+        const Amep = this.state.easyB.map((who, i) => {
+            let show = true
+            return (
                 <div>
 
-                    
-                    {    show ? <div > $ {(i+1)*200} </div> 
-                   
-                    : 
 
-                    <div onClick={()=>{ show=false}}>
-                      <h3> {who.question}  </h3> 
-                    <div>{who.correct_answer}{who.incorrect_answers}  </div>
-                    </div>
+                    {show ? <div onClick={() => { show = false }} > $ {(i + 1) * 200} </div>
+
+                        :
+
+                        <div onClick={() => { show = false }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers}  </div>
+                        </div>
                     }
                 </div>
 
             )
         })
-        const Abeep = this.state.mediumB.map((who,i ) => {
+        const Abeep = this.state.mediumB.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => { show = false }} > $ {(i + 3) * 200} </div>
+                        :
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
+                        <div onClick={() => { show=false }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div></div>
+
+                    }
                 </div>
 
             )
         })
-        const Aceeep = this.state.hardB.map((who,i ) => {
+        const Aceeep = this.state.hardB.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => { show = false }} > $ {(i + 5) * 200} </div>
+                        :
+                        <div onClick={() => { show = true }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
+
+
                 </div>
 
             )
         })
-        const Bmep = this.state.easyC.map((who,i ) => {
+        const Bmep = this.state.easyC.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        :
+                        <div onClick={() => { show = true }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
                 </div>
 
             )
         })
-        const Bbeep = this.state.mediumC.map((who,i ) => {
+        const Bbeep = this.state.mediumC.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        :
+                        <div onClick={() => { show = true }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
                 </div>
 
             )
         })
-        const Bceeep = this.state.hardC.map((who,i ) => {
+        const Bceeep = this.state.hardC.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {
+                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                            :
+                            <div onClick={() => { show = true }}>
+                                <h3> {who.question}  </h3>
+                                <div>{who.incorrect_answers}{who.correct_answer} </div>
+                            </div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
+                    }
+
+
                 </div>
 
             )
         })
         const Cmep = this.state.easyD.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        :
+                        <div onClick={() => { show = true }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
+                </div>
+
+
+            )
+        })
+        const Cbeep = this.state.mediumD.map((who, i) => {
+           let show= true
+            return (
+                <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        :
+                        <div onClick={() => { show = true }}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+
+                    }
                 </div>
 
             )
         })
-        const Cbeep = this.state.mediumD.map((who,i ) => {
+        const Cceeep = this.state.hardD.map((who, i) => {
+
+            let show = true
             return (
                 <div>
+                    {
+                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                            :
+                            <div onClick={() => this.setState({ show: true })}>
+                                <h3> {who.question}  </h3>
+                                <div>{who.incorrect_answers}{who.correct_answer} </div>
+                            </div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
-                </div>
+                    }
 
-            )
-        })
-        const Cceeep = this.state.hardD.map((who,i ) => {
-            return (
-                <div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
                 </div>
 
             )
         })
         const Dmep = this.state.easyE.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
                 </div>
 
             )
         })
         const Dbeep = this.state.mediumE.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
+                </div>
+            )
+        })
+        const Dceeep = this.state.hardE.map((who, i) => {
+            let show = true
+            return (
+                <div>
+                    {
+                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                            :
+                            <div onClick={() => this.setState({ show: true })}>
+                                <h3> {who.question}  </h3>
+                                <div>{who.incorrect_answers}{who.correct_answer} </div>
+                            </div>
+
+                    }
+
+
                 </div>
 
             )
         })
-        const Dceeep = this.state.hardE.map((who,i ) => {
+        const Emep = this.state.easyE.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
                 </div>
 
             )
         })
-        const Emep = this.state.easyE.map((who,i ) => {
+        const Ebeep = this.state.mediumE.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}> 
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
                 </div>
-
             )
         })
-        const Ebeep = this.state.mediumE.map((who,i ) => {
+        const Eceeep = this.state.hardE.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {
+                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                            :
+                            <div onClick={() => this.setState({ show: true })}>
+                                <h3> {who.question}  </h3>
+                                <div>{who.incorrect_answers}{who.correct_answer} </div>
+                            </div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
-                </div>
+                    }
 
-            )
-        })
-        const Eceeep = this.state.hardE.map((who,i ) => {
-            return (
-                <div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
                 </div>
 
             )
         })
         const Fmep = this.state.easyF.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.correct_answer}{who.incorrect_answers} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.correct_answer}{who.incorrect_answers} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+1)*200} </div>
                 </div>
+
 
             )
         })
         const Fbeep = this.state.mediumF.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {show ?
+                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        :
+                        <div onClick={() => this.setState({ show: true })}>
+                            <h3> {who.question}  </h3>
+                            <div>{who.incorrect_answers}{who.correct_answer} </div>
+                        </div>
+                    }
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+3)*200} </div>
                 </div>
 
             )
         })
         const Fceeep = this.state.hardF.map((who, i) => {
+            let show = true
             return (
                 <div>
+                    {
+                        show ? <div onClick={() => this.setState({ show: false })}> $ {(i + 5) * 200} </div>
+                            :
+                            <div onClick={() => this.setState({ show: true })}>
+                                <h3> {who.question}  </h3>
+                                <div>{who.incorrect_answers}{who.correct_answer} </div>
+                            </div>
 
-                    <h3> {who.question}  </h3>
-                    <div>{who.incorrect_answers}{who.correct_answer} </div>
-                    <div onClick={()=>this.setState({show:true})}> $ {(i+5)*200} </div>
+                    }
+
+
                 </div>
+
 
             )
         })
