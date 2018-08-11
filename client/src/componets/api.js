@@ -26,7 +26,7 @@ class Api extends Component {
         easyF: [{}],
         mediumF: [{}],
         hardF: [{}],
-     
+     show:true
 
     }
         ;
@@ -86,8 +86,17 @@ class Api extends Component {
             console.log(err)
         }
     }
+    
+   handleClick() {
+            this.setState({
+             show: !(this.state.show)
+            });
+          }
 
     render() {
+
+     
+        
 
         const cata = this.state.hardA.map((cat) => {
             return (
@@ -138,11 +147,11 @@ class Api extends Component {
                 <div>
 
 
-                    {show ? <div onClick={() => { show = false }} > $ {(i + 1) * 200} </div>
+                    {show ? <div onClick={this.handleClick} > $ {(i + 1) * 200} </div>
 
                         :
 
-                        <div onClick={() => { show = false }}>
+                        <div onClick={this.handleClick}>
                             <h3> {who.question}  </h3>
                             <div>{who.correct_answer}{who.incorrect_answers}  </div>
                         </div>
