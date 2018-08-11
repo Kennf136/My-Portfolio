@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 class Api extends Component {
 
     state = {
-  
+
 
         easyA: [{}],
         mediumA: [{}],
@@ -26,7 +26,7 @@ class Api extends Component {
         easyF: [{}],
         mediumF: [{}],
         hardF: [{}],
-        
+
 
     }
         ;
@@ -39,21 +39,26 @@ class Api extends Component {
             const easyQuestionAReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
             const mediumQuestionAReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
             const HardQuestionAReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
-            const easyQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
-            const mediumQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
-            const HardQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
-            const easyQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
-            const mediumQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
-            const HardQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
-            const easyQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
-            const mediumQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
-            const HardQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
-            const easyQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
-            const mediumQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
-            const HardQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
-            const easyQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=easy&type=multiple`)
-            const mediumQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=29&difficulty=medium&type=multiple`)
-            const HardQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
+
+            const easyQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=31&difficulty=easy&type=multiple`)
+            const mediumQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=31&difficulty=medium&type=multiple`)
+            const HardQuestionBReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=31&difficulty=hard&type=multiple`)
+
+            const easyQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=32&difficulty=easy&type=multiple`)
+            const mediumQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=32&difficulty=medium&type=multiple`)
+            const HardQuestionCReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=32&difficulty=hard&type=multiple`)
+
+            const easyQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=18&difficulty=easy&type=multiple`)
+            const mediumQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=18&difficulty=medium&type=multiple`)
+            const HardQuestionDReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=18&difficulty=hard&type=multiple`)
+
+            const easyQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=15&difficulty=easy&type=multiple`)
+            const mediumQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=15&difficulty=medium&type=multiple`)
+            const HardQuestionEReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=15&difficulty=hard&type=multiple`)
+
+            const easyQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=12&difficulty=easy&type=multiple`)
+            const mediumQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=2&category=12&difficulty=medium&type=multiple`)
+            const HardQuestionFReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=12&difficulty=hard&type=multiple`)
           
             this.setState({
                 // category:[{
@@ -84,9 +89,50 @@ class Api extends Component {
 
     render() {
 
+        const cata = this.state.hardA.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
+        const catb = this.state.hardB.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
+        const catc = this.state.hardC.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
+        const catd = this.state.hardD.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
+        const cate = this.state.hardE.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
+        const catf = this.state.hardF.map((cat) => {
+            return (
+                <div>
+                    <h1>  {cat.category} </h1>
+                </div>
+            )
+        })
 
-
-        const Amep = this.state.easyA.map((who, ) => {
+        const Amep = this.state.easyB.map((who, ) => {
             return (
                 <div>
 
@@ -96,7 +142,7 @@ class Api extends Component {
 
             )
         })
-        const Abeep = this.state.mediumA.map((who, ) => {
+        const Abeep = this.state.mediumB.map((who, ) => {
             return (
                 <div>
 
@@ -106,7 +152,7 @@ class Api extends Component {
 
             )
         })
-        const Aceeep = this.state.hardA.map((who, ) => {
+        const Aceeep = this.state.hardB.map((who, ) => {
             return (
                 <div>
 
@@ -116,7 +162,7 @@ class Api extends Component {
 
             )
         })
-        const Bmep = this.state.easyA.map((who, ) => {
+        const Bmep = this.state.easyC.map((who, ) => {
             return (
                 <div>
 
@@ -126,7 +172,7 @@ class Api extends Component {
 
             )
         })
-        const Bbeep = this.state.mediumA.map((who, ) => {
+        const Bbeep = this.state.mediumC.map((who, ) => {
             return (
                 <div>
 
@@ -136,7 +182,7 @@ class Api extends Component {
 
             )
         })
-        const Bceeep = this.state.hardA.map((who, ) => {
+        const Bceeep = this.state.hardC.map((who, ) => {
             return (
                 <div>
 
@@ -146,7 +192,7 @@ class Api extends Component {
 
             )
         })
-        const Cmep = this.state.easyA.map((who, ) => {
+        const Cmep = this.state.easyD.map((who, ) => {
             return (
                 <div>
 
@@ -156,7 +202,7 @@ class Api extends Component {
 
             )
         })
-        const Cbeep = this.state.mediumA.map((who, ) => {
+        const Cbeep = this.state.mediumD.map((who, ) => {
             return (
                 <div>
 
@@ -166,7 +212,7 @@ class Api extends Component {
 
             )
         })
-        const Cceeep = this.state.hardA.map((who, ) => {
+        const Cceeep = this.state.hardD.map((who, ) => {
             return (
                 <div>
 
@@ -176,7 +222,7 @@ class Api extends Component {
 
             )
         })
-        const Dmep = this.state.easyA.map((who, ) => {
+        const Dmep = this.state.easyE.map((who, ) => {
             return (
                 <div>
 
@@ -186,7 +232,7 @@ class Api extends Component {
 
             )
         })
-        const Dbeep = this.state.mediumA.map((who, ) => {
+        const Dbeep = this.state.mediumE.map((who, ) => {
             return (
                 <div>
 
@@ -196,7 +242,7 @@ class Api extends Component {
 
             )
         })
-        const Dceeep = this.state.hardA.map((who, ) => {
+        const Dceeep = this.state.hardE.map((who, ) => {
             return (
                 <div>
 
@@ -206,7 +252,7 @@ class Api extends Component {
 
             )
         })
-        const Emep = this.state.easyA.map((who, ) => {
+        const Emep = this.state.easyE.map((who, ) => {
             return (
                 <div>
 
@@ -216,7 +262,7 @@ class Api extends Component {
 
             )
         })
-        const Ebeep = this.state.mediumA.map((who, ) => {
+        const Ebeep = this.state.mediumE.map((who, ) => {
             return (
                 <div>
 
@@ -226,7 +272,7 @@ class Api extends Component {
 
             )
         })
-        const Eceeep = this.state.hardA.map((who, ) => {
+        const Eceeep = this.state.hardE.map((who, ) => {
             return (
                 <div>
 
@@ -236,7 +282,7 @@ class Api extends Component {
 
             )
         })
-        const Fmep = this.state.easyA.map((who, ) => {
+        const Fmep = this.state.easyF.map((who, ) => {
             return (
                 <div>
 
@@ -246,7 +292,7 @@ class Api extends Component {
 
             )
         })
-        const Fbeep = this.state.mediumA.map((who, ) => {
+        const Fbeep = this.state.mediumF.map((who, ) => {
             return (
                 <div>
 
@@ -256,7 +302,7 @@ class Api extends Component {
 
             )
         })
-        const Fceeep = this.state.hardA.map((who, ) => {
+        const Fceeep = this.state.hardF.map((who, ) => {
             return (
                 <div>
 
@@ -266,30 +312,41 @@ class Api extends Component {
 
             )
         })
-        
+
 
         return (
             <div>
 
                 <div>
-                    
-                    {Amep} {Abeep}{Aceeep}
+                    <div> {cata} </div>
+                    <div>  {Amep} {Abeep}{Aceeep} </div>
+
                 </div>
                 <div>
-                    {Bmep} {Bbeep}{Bceeep}
+                    <div> {catb} </div>
+                    <div>  {Bmep} {Bbeep}{Bceeep} </div>
+
                 </div>
                 <div>
-                    {Cmep} {Cbeep}{Cceeep}
+                    <div> {catc} </div>
+                    <div>   {Cmep} {Cbeep}{Cceeep} </div>
+
                 </div>
                 <div>
-                    {Dmep} {Dbeep}{Dceeep}
+                    <div> {catd} </div>
+                    <div>   {Dmep} {Dbeep}{Dceeep}</div>
+
                 </div>
                 <div>
-                    {Emep} {Ebeep}{Eceeep}
+                    <div> {cate} </div>
+                    <div>    {Emep} {Ebeep}{Eceeep} </div>
+
                 </div>
                 <div>
-                    {Fmep} {Fbeep}{Fceeep}
-                    
+                    <div> {catf} </div>
+                    <div>   {Fmep} {Fbeep}{Fceeep}</div>
+
+
                 </div>
             </div>
 
