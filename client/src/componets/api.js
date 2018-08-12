@@ -9,6 +9,44 @@ import QDH from './QDH';
 import QEH from './QEH';
 import QFH from './QFH';
 
+const Container= styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+height:100vh;
+background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWmXTaGW32U92fj9xlpfjaCfgZuRu5qwIajzVkKZYJxbOhLUg');
+background-size:cover;
+`
+const Back=styled.div`
+background-color:blue;
+display:flex;
+flex-direction:row;
+align-items:center;
+height:80vh;
+width:100vw;
+`
+const Alignment= styled.div`
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+width: 30rem;
+height: 90vh;
+justify-content:center;
+`
+const Score= styled.div`
+display:flex;
+border:solid;
+justify-content:center;
+height:11.6rem;
+align-items:center;
+`
+const Cat= styled.div`
+height:8rem;
+border:solid;
+align-items:center;
+justify-content:center;
+display:flex;
+`
 class Api extends Component {
 
     state = {
@@ -144,7 +182,7 @@ class Api extends Component {
                 <div>
 
 
-                    {show ? <div onClick={() => { show = false }} > $ {(i + 1) * 200} </div>
+                    {show ? <Score onClick={() => { show = false }} > $ {(i + 1) * 200} </Score>
 
                         :
 
@@ -162,7 +200,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => { show = false }} > $ {(i + 3) * 200} </div>
+                        <Score onClick={() => { show = false }} > $ {(i + 3) * 200} </Score>
                         :
 
                         <div onClick={() => { show=false }}>
@@ -174,23 +212,23 @@ class Api extends Component {
 
             )
         })
-        const Aceeep = this.state.hardA.map((who, i) => {
-            let show = true
-            return (
-                <div>
+        // const Aceeep = this.state.hardA.map((who, i) => {
+        //     let show = true
+        //     return (
+        //         <Score>
                   
-                    <QAH QAH={who.question} AAH={who.correct_answer} IAH={who.incorrect_answers} value={i}></QAH>
+        //             <QAH QAH={who.question} AAH={who.correct_answer} IAH={who.incorrect_answers} value={i}></QAH>
 
-                </div>
+        //         </Score>
 
-            )
-        })
+        //     )
+        // })
         const Bmep = this.state.easyB.map((who, i) => {
             let show = true
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </Score>
                         :
                         <div onClick={() => { show = true }}>
                             <h3> {who.question}  </h3>
@@ -207,7 +245,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={show= false }> $ {(i + 3) * 200} </div>
+                        <Score onClick={show= false }> $ {(i + 3) * 200} </Score>
                         :
                         <div onClick={() => { show = true }}>
                             <h3> {who.question}  </h3>
@@ -222,9 +260,9 @@ class Api extends Component {
         const Bceeep = this.state.hardB.map((who, i) => {
             let show = true
             return (
-                <div>
+                <Score>
                     <QBH QAH={who.question} ABH={who.correct_answer} IBH={who.incorrect_answers} value={i}></QBH>
-                </div>
+                </Score>
 
             )
         })
@@ -233,7 +271,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </Score>
                         :
                         <div onClick={() => { show = true }}>
                             <h3> {who.question}  </h3>
@@ -251,7 +289,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </Score>
                         :
                         <div onClick={() => { show = true }}>
                             <h3> {who.question}  </h3>
@@ -268,8 +306,9 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                   <QCH QCH={who.question} ACH={who.correct_answer} ICH={who.incorrect_answers} value={i}></QCH>
 
+                    <Score>  <QCH QCH={who.question} ACH={who.correct_answer} ICH={who.incorrect_answers} value={i}></QCH> </Score>
+                   
 
                 </div>
 
@@ -280,7 +319,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}>
                             <h3> {who.question}  </h3>
@@ -297,7 +336,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}>
                             <h3> {who.question}  </h3>
@@ -312,9 +351,9 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                   <QDH QDH={who.question} ADH={who.correct_answer} IDH={who.incorrect_answers} value={i}></QDH>
 
-
+<Score>  <QDH QDH={who.question} ADH={who.correct_answer} IDH={who.incorrect_answers} value={i}></QDH> </Score>
+                  
                 </div>
 
             )
@@ -324,7 +363,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}>
                             <h3> {who.question}  </h3>
@@ -341,7 +380,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}> 
                             <h3> {who.question}  </h3>
@@ -356,7 +395,8 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                    <QEH QAH={who.question} AEH={who.correct_answer} IEH={who.incorrect_answers} value={i}></QEH>
+                    <Score>  <QEH QAH={who.question} AEH={who.correct_answer} IEH={who.incorrect_answers} value={i}></QEH> </Score>
+                   
 
                 </div>
 
@@ -367,7 +407,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 1) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}>
                             <h3> {who.question}  </h3>
@@ -385,7 +425,7 @@ class Api extends Component {
             return (
                 <div>
                     {show ?
-                        <div onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </div>
+                        <Score onClick={() => this.setState({ show: false })}> $ {(i + 3) * 200} </Score>
                         :
                         <div onClick={() => this.setState({ show: true })}>
                             <h3> {who.question}  </h3>
@@ -401,8 +441,8 @@ class Api extends Component {
             let show = true
             return (
                 <div>
-                    <QFH QAH={who.question} AFH={who.correct_answer} IFH={who.incorrect_answers} value={i}></QFH>
-
+ 
+               <Score>  <QFH QAH={who.question} AFH={who.correct_answer} IFH={who.incorrect_answers} value={i}></QFH> </Score>     
 
                 </div>
 
@@ -412,40 +452,41 @@ class Api extends Component {
 
 
         return (
-            <div>
+            <Container>
+<Back> 
+                <Alignment>
+                    <Cat> {cata} </Cat>
+                    <div>  {Amep} {Abeep}<Score> <QAH/> </Score> </div>
 
-                <div>
-                    <div> {cata} </div>
-                    <div>  {Amep} {Abeep}{Aceeep} </div>
-
-                </div>
-                <div>
-                    <div> {catb} </div>
+                </Alignment>
+                <Alignment>
+                    <Cat> {catb} </Cat>
                     <div>  {Bmep} {Bbeep}{Bceeep} </div>
 
-                </div>
-                <div>
-                    <div> {catc} </div>
+                </Alignment>
+                <Alignment>
+                    <Cat> {catc} </Cat>
                     <div>   {Cmep} {Cbeep}{Cceeep} </div>
 
-                </div>
-                <div>
-                    <div> {catd} </div>
+                </Alignment>
+                <Alignment>
+                    <Cat> {catd} </Cat>
                     <div>   {Dmep} {Dbeep}{Dceeep}</div>
 
-                </div>
-                <div>
-                    <div> {cate} </div>
+                </Alignment>
+                <Alignment>
+                    <Cat> {cate} </Cat>
                     <div>    {Emep} {Ebeep}{Eceeep} </div>
 
-                </div>
-                <div>
-                    <div> {catf} </div>
+                </Alignment>
+                <Alignment>
+                    <Cat> {catf} </Cat>
                     <div>   {Fmep} {Fbeep}{Fceeep}</div>
 
 
-                </div>
-            </div>
+                </Alignment>
+                </Back>
+            </Container>
 
         );
     }

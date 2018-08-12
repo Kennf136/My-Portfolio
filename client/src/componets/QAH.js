@@ -1,8 +1,30 @@
 import React, { Component } from 'react'
 import { Button, Icon, Modal } from 'semantic-ui-react'
+import axios from 'axios';
+
+
 
 class AAH extends Component {
-  state = { open: false }
+  state = { open: false ,  hardA: [{}] }
+
+
+  componentDidMount() {
+    this.getQuestions();
+}
+
+
+getQuestions = async () => {
+  try {
+    const HardQuestionAReponse = await axios.get(`https://opentdb.com/api.php?amount=1&category=29&difficulty=hard&type=multiple`)
+  this.setState({
+      hardA: HardQuestionAReponse.data.results,
+    });
+  }
+  catch (err) {
+      console.log(err)
+  }
+}
+
 
   open = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
@@ -33,7 +55,7 @@ class AAH extends Component {
     )
   }
 }
-// console.log(this.state.open)
+
 
 
 const QAH = () => (

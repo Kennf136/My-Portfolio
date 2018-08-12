@@ -10,7 +10,7 @@ class GameBorad extends Component {
        
         return (
             <div>
-                   <div>
+                   {/* <div>
                     <div> {cata} </div>
                     <div>  {Amep} {Abeep}{Aceeep} </div>
 
@@ -40,7 +40,7 @@ class GameBorad extends Component {
                     <div>   {Fmep} {Fbeep}{Fceeep}</div>
 
 
-                </div>
+                </div> */}
             </div>
         );
     }
