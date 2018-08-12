@@ -31,6 +31,19 @@ getQuestions = async () => {
 
   render() {
     const { open } = this.state
+console.log("state A", this.state.hardA)
+
+const Aceeep = this.state.hardA.map((who, i) => {
+      let show = true
+      return (
+          <div>
+            {who.question}
+              
+          </div>
+
+      )
+  })
+
 
     return (
       <Modal
@@ -46,7 +59,7 @@ getQuestions = async () => {
       >
         <Modal.Header>Modal #2</Modal.Header>
         <Modal.Content>
-          <p>That's everything!</p>
+          <p> <Aceeep/>!</p> 
         </Modal.Content>
         <Modal.Actions>
           <Button icon='check' content='All Done' onClick={this.close} />
@@ -66,7 +79,7 @@ const QAH = () => (
         <Icon name='right arrow' />
       </div>
       <Modal.Description>
-        <p>We have more to share with you. Follow us along to modal 2</p>
+        <p>   </p>
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>

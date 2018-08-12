@@ -9,7 +9,7 @@ class ABH extends Component {
 
   render() {
     const { open } = this.state
-
+console.log("props B", (this.props))
     return (
       <Modal
         open={open}
