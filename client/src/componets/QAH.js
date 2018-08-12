@@ -8,6 +8,7 @@ class AAH extends Component {
   close = () => this.setState({ open: false })
 
   render() {
+    console.log()
     const { open } = this.state
 
     return (
@@ -33,7 +34,7 @@ class AAH extends Component {
     )
   }
 }
-// console.log(this.state.open)
+
 
 
 const QAH = () => (
